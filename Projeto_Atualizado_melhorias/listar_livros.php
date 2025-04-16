@@ -60,7 +60,7 @@ if ($resultado->num_rows > 0) {
 <body>
     <div class="container">
         <h2>Lista de Livros Cadastrados</h2>
-        <a href="cadastro_livros.php" class="btn btn-primary">Novo Cadastro</a>
+        <a href="cadastro_livro.php" class="btn btn-primary">Novo Cadastro</a>
         <a href="logout.php" class="btn btn-danger">Sair</a>
 
         <table class="table table-bordered">
