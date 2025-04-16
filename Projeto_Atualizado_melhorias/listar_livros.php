@@ -2,6 +2,15 @@
 session_start();
 require_once("conexao.php");
 
+if (
+    !isset($_SESSION['loggedin']) ||
+    $_SESSION['loggedin'] !== true ||
+    ($_SESSION['username'] !== 'biblio' && $_SESSION['username'] !== 'professor')
+) {
+    header("location: naolog.php");
+    exit();
+}
+
 $livros = [];
 $resultado = $conn->query("select * from livros order by id desc");
 if ($resultado->num_rows > 0) {

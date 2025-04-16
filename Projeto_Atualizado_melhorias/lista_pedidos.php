@@ -1,5 +1,15 @@
 <?php
 require_once "conexao.php";
+session_start();
+
+if (
+    !isset($_SESSION['loggedin']) ||
+    $_SESSION['loggedin'] !== true ||
+    ($_SESSION['username'] !== 'biblio' && $_SESSION['username'] !== 'professor')
+) {
+    header("location: naolog.php");
+    exit();
+}
 
 $resultado = $conn->query("select * from pedidos order by data_pedido desc");
 ?>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['username'] !== 'biblio') {
-    header("Location: index.php");
+    header("Location: naolog.php");
     exit;
 }
 ?>

@@ -2,6 +2,11 @@
 session_start();
 require_once("conexao.php");
 
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true || $_SESSION['username'] !== 'biblio') {
+    header("Location: naolog.php");
+    exit;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titulo = trim($_POST['titulo']);
     $autor = trim($_POST['autor']);
